@@ -1,17 +1,6 @@
 # Portfolio — Florentin Léger
 
-Un site-portfolio développé avec Nuxt 3 & Tailwind CSS pour présenter les projets, le parcours et les contacts de Florentin Léger. Ce dépôt contient la version source du site (design responsive, accessibilité et SEO de base).
-
----
-
-## Aperçu
-
-- Langue : français
-- Identité visuelle : palette bleu #3255A0
-- Framework : Nuxt 3 (Vue 3)
-- UI : Tailwind CSS
-
-Si vous voulez voir le site localement, suivez les commandes dans la section « Installation ».
+Un site-portfolio développé avec Nuxt 3 & Tailwind CSS pour présenter mes projets et mon parcours. Ce dépôt contient la version source du site (design responsive, accessibilité et SEO de base).
 
 ---
 

@@ -6,10 +6,10 @@
     <img src="/assets/icons/etoile.svg" alt="" class="decorative-star" aria-hidden="true" />
     
     <div class="relative z-10">
-      <h1 class="tk-stop-mn text-8xl leading-tight outline-shadow" data-text="FLORENTIN LÉGER">
+      <h1 class="tk-stop-mn text-7xl lg:text-8xl leading-tight outline-shadow" data-text="FLORENTIN LÉGER">
         FLORENTIN LÉGER
       </h1>
-      <p class="text-2xl mb-10">
+      <p class="text-xl lg:text-2xl mb-10">
         CRÉATEUR D'EXPÉRIENCES DIGITALES DEPUIS
       </p>
       
@@ -39,13 +39,13 @@
       </a>
     </div>
 
-  </header>
-
-  <div class="wave-divider" aria-hidden="true">
-    <svg viewBox="0 0 3351 317" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" role="presentation">
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 3351 317" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" role="presentation">
       <path d="M24.0767 263.53C137.667 177.91 317.527 72.02 528.517 89.2C728.947 105.52 778.767 218.36 981.027 263.53C1282.81 330.92 1366.86 123.27 1745.1 88.76C2151.26 51.71 2253.94 272.93 2668.66 256.11C2958.73 244.35 3188.12 124.78 3328.88 33.56" stroke="white" stroke-width="80" stroke-miterlimit="10"/>
-    </svg>
-  </div>
+      </svg>
+    </div>
+
+  </header>
 
   <section id="about-me" class="min-h-screen mx-auto max-w-5xl px-6 py-5 relative" aria-labelledby="about-title">
     
@@ -313,12 +313,6 @@
       </a>
     </div>
   </section>
-
-  <div class="wave-divider" aria-hidden="true">
-    <svg viewBox="0 0 3351 317" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" role="presentation">
-      <path d="M24.0767 263.53C137.667 177.91 317.527 72.02 528.517 89.2C728.947 105.52 778.767 218.36 981.027 263.53C1282.81 330.92 1366.86 123.27 1745.1 88.76C2151.26 51.71 2253.94 272.93 2668.66 256.11C2958.73 244.35 3188.12 124.78 3328.88 33.56" stroke="white" stroke-width="80" stroke-miterlimit="10"/>
-    </svg>
-  </div>
 
   <footer class="mx-auto max-w-5xl px-6 py-8 text-center">
     <p class="text-white/50 text-sm">

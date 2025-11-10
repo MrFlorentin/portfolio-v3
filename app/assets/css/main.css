@@ -5,6 +5,10 @@
   --bleu: #3255A0;
 }
 
+main {
+  overflow: hidden;
+}
+
 body{
   overflow-x: hidden;
 }
@@ -20,10 +24,10 @@ strong{
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
 }
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: var(--bleu);
 }
 
@@ -31,7 +35,7 @@ strong{
   background: linear-gradient(180deg, white);
   border-radius: 10px;
 }
-
+ */
 .outline-shadow {
   position: relative;
   display: inline-block;

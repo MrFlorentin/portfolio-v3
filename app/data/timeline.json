@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "period": "Depuis Septembre 2024",
+    "title": "MyDigitalSchool",
+    "role": "Bachelor Cycle Web et Multimédia",
+    "description": "Spécialisation en développement web à Caen",
+    "icon": "graduation"
+  },
+  {
+    "id": 2,
+    "period": "Mars 2025 à Juin 2025",
+    "title": "Stagiaire - Proxi Boissons",
+    "role": "Développement Web & SEO",
+    "description": "Conception et développement d'un site WordPress avec intégrations custom (thème, fonctions php...)",
+    "icon": "code"
+  },
+  {
+    "id": 3,
+    "period": "Depuis Juin 2025",
+    "title": "Emploi Étudiant - E. Leclerc",
+    "role": "Hôte de caisse & Employé Commercial",
+    "description": "Emploi étudiant en tant que caissier, favorisant le développement de compétences essentielles telles que la communication, la précision et la gestion du stress",
+    "icon": "shopping-cart"
+  },
+  {
+    "id": 4,
+    "period": "Depuis Septembre 2025",
+    "title": "Président - Unrest Studio",
+    "role": "Studio Créatif Multidisciplinaire",
+    "description": "Création d'un collectif sous la forme d'un studio, réunissant 7 étudiants dont l'objectif est de développer des jeux-vidéo et de rendre le numérique plus sûr et accessible",
+    "icon": "briefcase"
+  }
+]

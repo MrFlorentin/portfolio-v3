@@ -1,19 +1,32 @@
 [
   {
     "id": 1,
+    "title": "HeatBot",
+    "type": "Jeu vidéo",
+    "date": "Février 2026",
+    "description": "Création d'un jeu vidéo metroidvania en équipe durant une Game Jam. Le jeu a remporté le prix de la meilleure réalisation technique au concours national.",
+    "tags": ["Godot", "GDScript", "Game Design", "Game Development", "Level Design", "UI/UX"],
+    "duration": "5 jours",
+    "image": "/images/projects/heatbot.webp",
+    "alt": "Jeu vidéo en 2D crée sous le moteur de jeu Godot",
+    "gradient": "from-grey-500 to-cyan-600",
+    "link": "https://unreststudio.itch.io/heatbot"
+  },
+  {
+    "id": 2,
     "title": "Portfolio V3",
     "type": "Site Web",
     "date": "Novembre 2025",
     "description": "Refonte complète avec Nuxt 4 et TailwindCSS 4. Design moderne, animations fluides et expérience utilisateur optimisée.",
     "tags": ["HTML", "CSS", "Nuxt", "Vue", "Tailwind", "TypeScript", "UI/UX"],
-    "duration": "En cours",
-    "icon": "💻",
+    "duration": "1 mois",
+    "image": "/images/projects/portfolio.webp",
     "alt": "Portfolio personnel développé avec Nuxt 4 et TailwindCSS - Développement web moderne",
     "gradient": "from-blue-500 to-cyan-600",
     "link": "https://github.com/MrFlorentin/portfolio-v3"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Unrest Studio",
     "type": "Projet entrepreneurial",
     "date": "Septembre 2025",
@@ -23,10 +36,10 @@
     "image": "/images/projects/unrest.webp",
     "alt": "Site de Unrest Studio - Développement NuxtJS/Vue",
     "gradient": "from-emerald-500 to-teal-600",
-    "link": "#"
+    "link": "https://unreststudio.fr"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Je te laisserai un mot",
     "type": "Site Web",
     "date": "Juin 2025",
@@ -39,7 +52,7 @@
     "link": "https://www.jetelaisseraiunmot.fr/"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Proxi Boissons",
     "type": "Site vitrine",
     "date": "Mars-Juin 2025",
@@ -52,7 +65,7 @@
     "link": "https://www.proxiboissons.fr/"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Cadet Roussel",
     "type": "Digital sans frontières",
     "date": "Mars 2025",
@@ -65,7 +78,7 @@
     "link": "https://dsf.florentin-leger.mds-caen.yt/"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Demos Mind",
     "type": "Projet de partiels",
     "date": "Mars 2025",
@@ -78,7 +91,7 @@
     "link": "https://demosmind.florentin-leger.mds-caen.yt/"
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Halftime // Kendrick",
     "type": "Affiche",
     "date": "Février 2025",
@@ -91,7 +104,7 @@
     "link": "https://www.instagram.com/p/DGI3WrUCJRg/"
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "Last Burn Is Out",
     "type": "Série d'affiches",
     "date": "Janvier 2025",

@@ -1,6 +1,20 @@
 <template>
+  <div :class="isDark ? 'dark' : 'light'" class="min-h-screen transition-colors duration-300">
+    
+    <button 
+      @click="toggleTheme" 
+      class="fixed top-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg bg-white/10 text-white hover:bg-white/20"
+      :aria-label="isDark ? 'Activer le mode clair' : 'Activer le mode sombre'"
+    >
+      <svg v-if="!isDark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+      <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </button>
 
-  <header id="hero" class="h-screen flex items-center justify-center bg-bleu text-white text-center px-6 relative overflow-hidden" role="banner">
+  <header id="hero" class="h-screen flex items-center justify-center text-center px-6 relative overflow-hidden transition-colors duration-300" :class="isDark ? 'bg-gray-900 text-white' : 'bg-bleu text-white'" role="banner">
     
     <div class="decorative-circle" aria-hidden="true"></div>
     <img src="/assets/icons/etoile.svg" alt="" class="decorative-star" aria-hidden="true" />
@@ -12,29 +26,29 @@
       <p class="text-xl lg:text-2xl mb-10">
         CRÉATEUR D'EXPÉRIENCES DIGITALES DEPUIS
       </p>
-      
+
       <div class="flex items-center justify-center gap-8 mb-10" role="list" aria-label="Statistiques">
         <div class="text-center" role="listitem">
-          <div class="text-3xl font-bold mb-1 tk-argent-pixel-cf" aria-label="2 années d'expérience">02</div>
-          <div class="text-sm text-white/70 uppercase tracking-wider">Années</div>
+          <div class="text-3xl font-bold mb-1 tk-argent-pixel-cf" aria-label="3 années d'expérience">03</div>
+          <div class="text-sm uppercase tracking-wider text-white/70">Années</div>
         </div>
         
-        <div class="text-white/50 text-3xl" aria-hidden="true">|</div>
+        <div class="text-3xl text-white/50" aria-hidden="true">|</div>
         
         <div class="text-center" role="listitem">
-          <div class="text-3xl font-bold mb-1 tk-argent-pixel-cf" aria-label="Plus de 7 projets réalisés">+ 7</div>
-          <div class="text-sm text-white/70 uppercase tracking-wider">Projets</div>
+          <div class="text-3xl font-bold mb-1 tk-argent-pixel-cf" :aria-label="`Plus de ${totalProjects} projets réalisés`">+ {{ totalProjects }}</div>
+          <div class="text-sm uppercase tracking-wider text-white/70">Projets</div>
         </div>
         
-        <div class="text-white/50 text-3xl" aria-hidden="true">|</div>
+        <div class="text-3xl text-white/50" aria-hidden="true">|</div>
         
         <div class="text-center" role="listitem">
           <div class="text-3xl font-bold tk-argent-pixel-cf" aria-label="Passion infinie">∞</div>
-          <div class="text-sm text-white/70 uppercase tracking-wider">Passion</div>
+          <div class="text-sm uppercase tracking-wider text-white/70">Passion</div>
         </div>
       </div>
       
-      <a href="#about-me" class="inline-flex items-center justify-center px-12 bg-white text-[var(--bleu)] rounded-2xl font-semibold leading-none btn-centered" aria-label="En savoir plus sur mon parcours">
+      <a href="#about-me" class="inline-flex items-center justify-center px-12 bg-white rounded-2xl font-semibold leading-none btn-centered transition-colors duration-300" :class="isDark ? 'text-gray-900' : 'text-(--bleu)'" aria-label="En savoir plus sur mon parcours">
         En savoir plus !
       </a>
     </div>
@@ -47,15 +61,15 @@
 
   </header>
 
-  <section id="about-me" class="min-h-screen mx-auto max-w-5xl px-6 py-5 relative" aria-labelledby="about-title">
+  <section id="about-me" class="min-h-screen mx-auto max-w-5xl px-6 py-5 relative transition-colors duration-300" :class="isDark ? 'bg-gray-900' : 'bg-bleu'" aria-labelledby="about-title">
     
     <div class="decorative-circle-about" aria-hidden="true"></div>
     <img src="/assets/icons/etoile.svg" alt="" class="decorative-star-about" aria-hidden="true" />
     
-    <h2 id="about-title" class="text-4xl mb-2 text-white tk-argent-pixel-cf text-center lg:text-left relative z-10">
+    <h2 id="about-title" class="text-4xl mb-2 text-white tk-argent-pixel-cf text-center lg:text-left relative z-10 scroll-animate">
       Qui suis-je ?
     </h2>
-    <p class="text-md font-normal text-center lg:text-left mt-10 text-white lg:mr-64 leading-relaxed">
+    <p class="text-md font-normal text-center lg:text-left mt-10 text-white lg:mr-64 leading-relaxed scroll-animate scroll-animate-delay-1">
       Depuis que j’ai <strong>découvert le code</strong> en étant petit, j’ai compris que le web pouvait être un <strong>terrain de jeu sans limites</strong>. À 19 ans, je combine développement et design pour donner vie à des projets qui sont <strong>porteurs de sens</strong>.
       <br />
       <br />
@@ -64,7 +78,7 @@
       Créer plus que des projets : des <strong>expériences digitales </strong>qui inspirent, tout en continuant à apprendre chaque jour un peu plus.
     </p>
 
-    <h3 id="timeline-title" class="text-2xl mt-16 mb-6 text-white tk-argent-pixel-cf text-center lg:text-left">
+    <h3 id="timeline-title" class="text-2xl mt-16 mb-6 text-white tk-argent-pixel-cf text-center lg:text-left scroll-animate">
       Mon parcours
     </h3>
 
@@ -72,11 +86,12 @@
       <article 
         v-for="(item, index) in timeline" 
         :key="item.id"
-        class="relative pl-20 mb-12 flex items-start group w-full max-w-2xl lg:max-w-none"
+        class="relative pl-20 mb-12 flex items-start group w-full max-w-2xl lg:max-w-none scroll-animate"
+        :class="`scroll-animate-delay-${Math.min(index + 1, 4)}`"
       >
         <div v-if="index < timeline.length - 1" class="absolute left-8 top-16 w-0.5 h-full bg-white/20" aria-hidden="true"></div>
         
-        <div class="absolute left-0 top-0 w-16 h-16 bg-white rounded-full flex items-center justify-center text-[var(--bleu)] shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl" aria-hidden="true">
+        <div class="absolute left-0 top-0 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg z-10 transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl" :class="isDark ? 'text-gray-900' : 'text-(--bleu)'" aria-hidden="true">
           <svg v-if="item.icon === 'graduation'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6" role="img" aria-label="Formation">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -105,24 +120,25 @@
     </nav>
   </section>
 
-  <section id="projects" class="min-h-screen mx-auto max-w-6xl px-6 relative" aria-labelledby="projects-title">
+  <section id="projects" class="min-h-screen mx-auto max-w-6xl px-6 relative transition-colors duration-300" :class="isDark ? 'bg-gray-900' : 'bg-bleu'" aria-labelledby="projects-title">
     
     <div class="decorative-circle-projects" aria-hidden="true"></div>
     <img src="/assets/icons/etoile.svg" alt="" class="decorative-star-projects" aria-hidden="true" />
     
-    <h2 id="projects-title" class="text-4xl mb-2 text-white tk-argent-pixel-cf text-center lg:text-left relative z-10">
+    <h2 id="projects-title" class="text-4xl mb-2 text-white tk-argent-pixel-cf text-center lg:text-left relative z-10 scroll-animate">
       Mes projets
     </h2>
-    <p class="text-white text-lg leading-relaxed text-center lg:text-left mb-8">Plutôt qu'une liste de compétences, laissez-moi vous montrer ce que je sais faire.</p>
+    <p class="text-white text-lg leading-relaxed text-center lg:text-left mb-8 scroll-animate scroll-animate-delay-1">Plutôt qu'une liste de compétences, laissez-moi vous montrer ce que je sais faire.</p>
     
-    <nav class="flex flex-wrap gap-3 mb-12 justify-center lg:justify-start" aria-label="Filtrer les projets par compétence" role="navigation">
+    <nav class="flex flex-wrap gap-3 mb-12 justify-center lg:justify-start scroll-animate scroll-animate-delay-2" aria-label="Filtrer les projets par compétence" role="navigation">
       <button
         @click="selectedFilter = 'Tous'"
         :class="[
           'filter-btn px-4 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer',
           selectedFilter === 'Tous' 
-            ? 'bg-white text-[var(--bleu)] shadow-lg scale-105' 
-            : 'bg-white/10 text-white/80 border border-white/15 hover:bg-white/15 hover:border-white/25'
+            ? 'bg-white shadow-lg scale-105' 
+            : 'bg-white/10 text-white/80 border border-white/15 hover:bg-white/15 hover:border-white/25',
+          selectedFilter === 'Tous' && (isDark ? 'text-gray-900' : 'text-(--bleu)')
         ]"
         :aria-pressed="selectedFilter === 'Tous'"
         aria-label="Afficher tous les projets"
@@ -136,8 +152,9 @@
         :class="[
           'filter-btn px-4 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer',
           selectedFilter === skill 
-            ? 'bg-white text-[var(--bleu)] shadow-lg scale-105' 
-            : 'bg-white/10 text-white/80 border border-white/15 hover:bg-white/15 hover:border-white/25'
+            ? 'bg-white shadow-lg scale-105' 
+            : 'bg-white/10 text-white/80 border border-white/15 hover:bg-white/15 hover:border-white/25',
+          selectedFilter === skill && (isDark ? 'text-gray-900' : 'text-(--bleu)')
         ]"
         :aria-pressed="selectedFilter === skill"
         :aria-label="`Filtrer les projets par ${skill}`"
@@ -146,17 +163,13 @@
       </button>
     </nav>
     
-    <TransitionGroup 
-      name="projects"
-      tag="div"
-      class="grid grid-cols-1 lg:grid-cols-2 gap-6"
-    >
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <article 
         v-for="project in filteredProjects" 
         :key="project.id"
-        class="group bg-white/5 rounded-3xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] hover:border-white/20 hover:scale-[1.02] flex flex-col"
+        class="group bg-white/5 rounded-3xl overflow-hidden backdrop-blur-sm border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] hover:border-white/20 hover:scale-[1.02] flex flex-col scroll-animate"
       >
-        <div class="h-48 bg-gradient-to-br relative overflow-hidden" :class="project.gradient">
+        <div class="h-48 bg-white/10 relative overflow-hidden">
           <template v-if="project.image">
             <img 
               :src="project.image" 
@@ -164,12 +177,7 @@
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 transition-opacity duration-300 group-hover:opacity-75"></div>
           </template>
-          
-          <div v-else class="absolute inset-0 flex items-center justify-center text-white/80 text-7xl select-none transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 animate-float-icon">
-            {{ project.icon || '📁' }}
-          </div>
         </div>
         
         <div class="p-6 flex flex-col flex-1">
@@ -216,14 +224,14 @@
           </div>
         </div>
       </article>
-    </TransitionGroup>
+    </div>
     
-    <nav v-if="totalPages > 1" class="flex items-center justify-center gap-3 mt-12" aria-label="Pagination des projets">
+    <nav v-if="totalPages > 1" class="flex items-center justify-center gap-3 mt-12 scroll-animate scroll-animate-delay-3" aria-label="Pagination des projets">
       <button 
         @click="currentPage--" 
         :disabled="currentPage === 1"
         class="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
-        :class="currentPage === 1 ? 'bg-white/5 text-white/30' : 'bg-white/10 text-white hover:bg-white hover:text-[var(--bleu)] hover:scale-105 cursor-pointer'"
+        :class="currentPage === 1 ? 'bg-white/5 text-white/30' : 'bg-white/10 text-white hover:bg-white hover:scale-105 cursor-pointer' + (isDark ? ' hover:text-gray-900' : ' hover:text-(--bleu)')"
         aria-label="Page précédente"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
@@ -237,9 +245,12 @@
           :key="page"
           @click="currentPage = page"
           class="pagination-btn w-10 h-10 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer"
-          :class="currentPage === page 
-            ? 'bg-white text-[var(--bleu)] scale-110 shadow-lg' 
-            : 'bg-white/10 text-white/80 hover:bg-white/20 hover:scale-105'"
+          :class="[
+            currentPage === page 
+              ? 'bg-white scale-110 shadow-lg' 
+              : 'bg-white/10 text-white/80 hover:bg-white/20 hover:scale-105',
+            currentPage === page && (isDark ? 'text-gray-900' : 'text-(--bleu)')
+          ]"
           :aria-label="`Page ${page}`"
           :aria-current="currentPage === page ? 'page' : false"
         >
@@ -251,7 +262,7 @@
         @click="currentPage++" 
         :disabled="currentPage === totalPages"
         class="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
-        :class="currentPage === totalPages ? 'bg-white/5 text-white/30' : 'bg-white/10 text-white hover:bg-white hover:text-[var(--bleu)] hover:scale-105 cursor-pointer'"
+        :class="currentPage === totalPages ? 'bg-white/5 text-white/30' : 'bg-white/10 text-white hover:bg-white hover:scale-105 cursor-pointer' + (isDark ? ' hover:text-gray-900' : ' hover:text-(--bleu)')"
         aria-label="Page suivante"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
@@ -261,36 +272,37 @@
     </nav>
   </section>
 
-  <section id="contact" class="mx-auto max-w-5xl px-6 py-20 relative flex flex-col items-center justify-center" aria-labelledby="contact-title">
+  <section id="contact" class="mx-auto max-w-5xl px-6 py-20 relative flex flex-col items-center justify-center transition-colors duration-300" :class="isDark ? 'bg-gray-900' : 'bg-bleu'" aria-labelledby="contact-title">
     
     <div class="decorative-circle-contact" aria-hidden="true"></div>
     <img src="/assets/icons/etoile.svg" alt="" class="decorative-star-contact" aria-hidden="true" />
     
-    <h2 id="contact-title" class="text-4xl mb-4 text-white tk-argent-pixel-cf text-center relative z-10">
+    <h2 id="contact-title" class="text-4xl mb-4 text-white tk-argent-pixel-cf text-center relative z-10 scroll-animate">
       On se contacte ?
     </h2>
-    <p class="text-white text-lg leading-relaxed text-center mb-6 max-w-2xl relative z-10">
+    <p class="text-white text-lg leading-relaxed text-center mb-6 max-w-2xl relative z-10 scroll-animate scroll-animate-delay-1">
       Vous avez un projet en tête ou souhaitez simplement échanger ?
       <br />N'hésitez pas à me contacter !
     </p>
     
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-2xl">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-2xl scroll-animate scroll-animate-delay-2">
       <a 
         href="mailto:florentinleger@proton.me" 
-        class="contact-btn group w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 text-white px-8 rounded-2xl border border-white/15 transition-all duration-300 hover:bg-white hover:text-[var(--bleu)] hover:scale-105 hover:shadow-xl backdrop-blur-sm"
+        class="contact-btn group w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 text-white px-8 rounded-2xl border border-white/15 transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-xl backdrop-blur-sm"
+        :class="isDark ? 'hover:text-gray-900' : 'hover:text-(--bleu)'"
         aria-label="M'envoyer un email à florentinleger@proton.me"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-        <span class="font-medium">florentinleger@proton.me</span>
+        </svg> <span class="font-medium">florentinleger@proton.me</span>
       </a>
       
       <a 
         href="https://www.linkedin.com/in/florentin-leger/" 
         target="_blank"
         rel="noopener noreferrer"
-        class="contact-btn group w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 text-white px-8 rounded-2xl border border-white/15 transition-all duration-300 hover:bg-white hover:text-[var(--bleu)] hover:scale-105 hover:shadow-xl backdrop-blur-sm"
+        class="contact-btn group w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 text-white px-8 rounded-2xl border border-white/15 transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-xl backdrop-blur-sm"
+        :class="isDark ? 'hover:text-gray-900' : 'hover:text-(--bleu)'"
         aria-label="Voir mon profil LinkedIn (s'ouvre dans un nouvel onglet)"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
@@ -303,7 +315,8 @@
         href="https://github.com/MrFlorentin" 
         target="_blank"
         rel="noopener noreferrer"
-        class="contact-btn group w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 text-white px-8 rounded-2xl border border-white/15 transition-all duration-300 hover:bg-white hover:text-[var(--bleu)] hover:scale-105 hover:shadow-xl backdrop-blur-sm"
+        class="contact-btn group w-full sm:w-auto flex items-center justify-center gap-3 bg-white/10 text-white px-8 rounded-2xl border border-white/15 transition-all duration-300 hover:bg-white hover:scale-105 hover:shadow-xl backdrop-blur-sm"
+        :class="isDark ? 'hover:text-gray-900' : 'hover:text-(--bleu)'"
         aria-label="Voir mon profil GitHub (s'ouvre dans un nouvel onglet)"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
@@ -336,20 +349,82 @@
     </p>
   </footer>
   
+  </div>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, nextTick } from 'vue'
 import projectsData from '~/data/projects.json'
 import timelineData from '~/data/timeline.json'
 
 const projects = projectsData
 const timeline = timelineData
 
+// Theme management
+const isDark = ref(false) // Default: light mode (blue)
+
+const toggleTheme = () => {
+  isDark.value = !isDark.value
+  if (process.client) {
+    localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+    document.documentElement.classList.toggle('dark', isDark.value)
+    document.documentElement.classList.toggle('light', !isDark.value)
+  }
+}
+
+onMounted(() => {
+  if (process.client) {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      isDark.value = savedTheme === 'dark'
+    }
+    document.documentElement.classList.toggle('dark', isDark.value)
+    document.documentElement.classList.toggle('light', !isDark.value)
+    
+    // Setup scroll animations
+    setupScrollAnimations()
+  }
+})
+
+// Scroll animations with Intersection Observer
+let scrollObserver = null
+
+const setupScrollAnimations = () => {
+  if (!process.client) return
+  
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  }
+  
+  // Cleanup previous observer
+  if (scrollObserver) {
+    scrollObserver.disconnect()
+  }
+  
+  scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in')
+      }
+    })
+  }, observerOptions)
+  
+  // Observe all elements with scroll-animate class
+  const animatedElements = document.querySelectorAll('.scroll-animate')
+  animatedElements.forEach(el => {
+    // Reset animation for new elements
+    el.classList.remove('animate-in')
+    scrollObserver.observe(el)
+  })
+}
+
 const selectedFilter = ref('Tous')
 
 const currentPage = ref(1)
 const projectsPerPage = 4
+
+const totalProjects = computed(() => projects.length)
 
 const uniqueSkills = computed(() => {
   const allSkills = projects.flatMap(project => project.tags)
@@ -377,5 +452,13 @@ const filteredProjects = computed(() => {
 
 watch(selectedFilter, () => {
   currentPage.value = 1
+})
+
+// Re-setup animations when page or filter changes
+watch([currentPage, selectedFilter], async () => {
+  if (process.client) {
+    await nextTick()
+    setupScrollAnimations()
+  }
 })
 </script>

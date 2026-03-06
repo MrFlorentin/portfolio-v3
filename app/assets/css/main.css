@@ -15,8 +15,15 @@ body{
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bleu);
   font-family: poppins, sans-serif;
+}
+
+html.light {
+  background-color: var(--bleu);
+}
+
+html.dark {
+  background-color: #111827;
 }
 
 strong{
@@ -132,25 +139,6 @@ strong{
   padding-bottom: 1rem;
 }
 
-.projects-move,
-.projects-enter-active {
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.projects-leave-active {
-  transition: all 0.2s ease-out;
-  position: absolute;
-}
-
-.projects-enter-from {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.projects-leave-to {
-  opacity: 0;
-}
-
 .wave-divider {
   position: absolute;
   bottom: 0;
@@ -195,6 +183,7 @@ a:hover:not(.no-hover) {
   background: white;
   border-radius: 50%;
   z-index: 0;
+  transition: background-color 0.3s;
 }
 
 .decorative-circle {
@@ -239,6 +228,7 @@ a:hover:not(.no-hover) {
 .decorative-star-contact {
   position: absolute;
   z-index: 0;
+  transition: filter 0.3s;
 }
 
 .decorative-star {
@@ -306,4 +296,64 @@ a:hover:not(.no-hover) {
 
 .animate-float-icon {
   animation: float-icon 3s ease-in-out infinite;
+}
+
+/* Scroll Animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-animate-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* Alternative animation styles */
+.scroll-animate-fade {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.scroll-animate-fade.animate-in {
+  opacity: 1;
+}
+
+.scroll-animate-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate-slide-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate-slide-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
 }
